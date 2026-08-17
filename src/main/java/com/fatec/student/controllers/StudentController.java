@@ -1,32 +1,61 @@
 package com.fatec.student.controllers;
 
+import java.net.URI;
 import java.util.List;
-import java.util.Optional;
 
+
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.fatec.student.entities.Student;
-import com.fatec.student.repositories.StudentRepository;
+import com.fatec.student.services.StudentService;
 
 @RestController
 @RequestMapping("/students")
 public class StudentController {
 
-    private final StudentRepository repository;
-
-    public StudentController(StudentRepository repository) {
-        this.repository = repository;
-    }
+    private StudentService service;
 
     @GetMapping
-    public List<Student> getStudents() {
-        return repository.findAll();
+    public ResponseEntity<List<Student>> getAll() {
+        return ResponseEntity.ok(service.findAll());
     }
 
-    @GetMapping("/{id}")
-    public Student getStudentById(@PathVariable Long id) {
-        Optional<Student> student = repository.findById(id);
-        return student.orElse(null);
+    @GetMapping("{id}")
+    public ResponseEntity<Student> getById(@PathVariable long id) {
+        return ResponseEntity.ok(service.findById(id));
+    }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<Void> deleteById(@PathVariable long id) {
+
+        service.deleteById(id);
+
+        return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping
+    public ResponseEntity<Student> save(@RequestBody Student student) {
+
+        Student s = service.save(student);
+
+        URI location = ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(s.getId())
+                .toUri();
+
+        return ResponseEntity.created(location).body(s);
+    }
+
+    @PutMapping("{id}")
+    public ResponseEntity<Void> update(@PathVariable long id,
+                                       @RequestBody Student student) {
+
+        service.update(student, id);
+
+        return ResponseEntity.noContent().build();
     }
 
 }
