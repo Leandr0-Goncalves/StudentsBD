@@ -50,6 +50,7 @@ public class StudentService {
         s.setEmail(student.getEmail());
         s.setTelefone(student.getTelefone());
         s.setDataCadastro(student.getDataCadastro());
+        s.setCurso(student.getCurso());
 
         repository.save(s);
     }

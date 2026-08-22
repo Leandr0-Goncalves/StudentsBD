@@ -1,11 +1,11 @@
-INSERT INTO TBL_STUDENTS (NOME_COMPLETO, DATA_NASCIMENTO, GENERO, EMAIL, TELEFONE, DATA_CADASTRO)
-VALUES ('João Silva', '2002-05-10', 'Masculino', 'joao.silva@fatec.sp.gov.br', '(15) 99999-1111', '2026-08-11 10:00:00');
+INSERT INTO TBL_STUDENTS (NOME_COMPLETO, DATA_NASCIMENTO, GENERO, EMAIL, TELEFONE, DATA_CADASTRO, CURSO)
+VALUES ('João Silva', '2002-05-10', 'Masculino', 'joao.silva@fatec.sp.gov.br', '(15) 99999-1111', '2026-08-11 10:00:00', 'Análise e Desenvolvimento de Sistemas');
 
-INSERT INTO TBL_STUDENTS (NOME_COMPLETO, DATA_NASCIMENTO, GENERO, EMAIL, TELEFONE, DATA_CADASTRO)
-VALUES ('Maria Oliveira', '2001-08-20', 'Feminino', 'maria.oliveira@fatec.sp.gov.br', '(15) 99999-2222', '2026-08-11 10:05:00');
+INSERT INTO TBL_STUDENTS (NOME_COMPLETO, DATA_NASCIMENTO, GENERO, EMAIL, TELEFONE, DATA_CADASTRO, CURSO)
+VALUES ('Maria Oliveira', '2001-08-20', 'Feminino', 'maria.oliveira@fatec.sp.gov.br', '(15) 99999-2222', '2026-08-11 10:05:00', 'Gestão Empresarial');
 
-INSERT INTO TBL_STUDENTS (NOME_COMPLETO, DATA_NASCIMENTO, GENERO, EMAIL, TELEFONE, DATA_CADASTRO)
-VALUES ('Carlos Pereira', '2003-02-15', 'Masculino', 'carlos.pereira@fatec.sp.gov.br', '(15) 99999-3333', '2026-08-11 10:10:00');
+INSERT INTO TBL_STUDENTS (NOME_COMPLETO, DATA_NASCIMENTO, GENERO, EMAIL, TELEFONE, DATA_CADASTRO, CURSO)
+VALUES ('Carlos Pereira', '2003-02-15', 'Masculino', 'carlos.pereira@fatec.sp.gov.br', '(15) 99999-3333', '2026-08-11 10:10:00', 'Redes de Computadores');
 
-INSERT INTO TBL_STUDENTS (NOME_COMPLETO, DATA_NASCIMENTO, GENERO, EMAIL, TELEFONE, DATA_CADASTRO)
-VALUES ('Leandro Augusto', '2003-02-15', 'Masculino', 'leandro.augusto@fatec.sp.gov.br', '(15) 99999-4444', '2026-08-11 10:15:00');
+INSERT INTO TBL_STUDENTS (NOME_COMPLETO, DATA_NASCIMENTO, GENERO, EMAIL, TELEFONE, DATA_CADASTRO, CURSO)
+VALUES ('Leandro Augusto', '2008-09-01', 'Masculino', 'leandro.augusto@fatec.sp.gov.br', '(15) 99999-4444', '2026-08-11 10:15:00', 'Sistemas de Informação');

@@ -1,14 +1,15 @@
 package com.fatec.student.entities;
 
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.*;
-import java.io.Serializable;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "TBL_STUDENTS")
@@ -36,7 +37,8 @@ public class Student implements Serializable {
     @Column(nullable = false)
     private LocalDateTime dataCadastro;
 
-
+    @Column(nullable = false, length = 100)
+    private String curso;
 
     
 
@@ -94,6 +96,14 @@ public class Student implements Serializable {
 
     public void setDataCadastro(LocalDateTime dataCadastro) {
         this.dataCadastro = dataCadastro;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public void setCurso(String curso) {
+        this.curso = curso;
     }
 
     @Override
