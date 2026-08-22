@@ -15,7 +15,11 @@ import com.fatec.student.services.StudentService;
 @RequestMapping("/students")
 public class StudentController {
 
-    private StudentService service;
+    private final StudentService service;
+
+    public StudentController(StudentService service) {
+        this.service = service;
+    }
 
     @GetMapping
     public ResponseEntity<List<Student>> getAll() {
